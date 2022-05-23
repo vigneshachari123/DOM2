@@ -1,12 +1,20 @@
-var numberofimages = document.querySelectorAll(".drum").length;
-for (var i = 0; i < numberofimages; i++) {
+var numberOfimages = document.querySelectorAll(".drum").length;
+for (var i = 0; i < numberOfimages; i++) {
   document.querySelectorAll("button")[i].addEventListener("click", function () {
     var buttons = this.innerHTML;
-    switch (buttons) {
+    makesound(buttons);
+  });
+
+  document.addEventListener("keypress", function (event) {
+    makesound(event.key);
+  });
+
+  function makesound(key) {
+    switch (key) {
       case "w":
         var tom1 = new Audio("sounds/tom-1.mp3");
         tom1.play();
-        brea;
+        break;
       case "a":
         var tom2 = new Audio("sounds/tom-2.mp3");
         tom2.play();
@@ -31,5 +39,5 @@ for (var i = 0; i < numberofimages; i++) {
       default:
         break;
     }
-  });
+  }
 }
